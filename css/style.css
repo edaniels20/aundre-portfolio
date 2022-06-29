@@ -1,0 +1,391 @@
+:root {
+    --red: #e63946;
+    --cream: #f1faee;
+    --blue: #a8dadc;
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--red);
+}
+
+.logo-top, .logo-bottom {
+    margin: 0;
+    padding: 0;
+    color: var(--cream);
+    font-family: 'Rubik Wet Paint', cursive;
+    font-size: calc(30px + (40 - 30) * ((100vw - 320px) / (1200 - 320)));
+}
+
+.logo-bottom {
+    margin-top: -10px;
+    padding-left: 20px;
+}
+
+.main-nav {
+    background-color: var(--red);
+    overflow: hidden;
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    z-index: 2;
+}
+
+.main-nav-items {
+    padding-top: 15px;
+}
+
+.main-nav-link {
+    color: var(--cream);
+}
+
+.main-nav-link:hover {
+    color: var(--blue);
+}
+
+.resume-link {
+    border-radius: 100px;
+    color: var(--blue);
+}
+
+.resume-link:hover {
+    color: var(--cream);
+}
+
+@media (max-width: 991px) {
+    .logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-bottom {
+        margin-left: -10px;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 769px) {
+
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-nav-items {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.opening {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.wavy {
+    position: relative;
+    -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+
+.opening-text {
+    font-weight: 400;
+}
+
+.wavy span {
+    color: var(--cream);
+    display: inline-block;
+    letter-spacing: 2px;
+    position: relative;
+    text-transform: uppercase;
+    animation: animate 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+    font-size: calc(10px + (100 - 10) * ((100vw - 320px) / (1200 - 320)));
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+}
+
+@keyframes animate {
+    0%
+    {
+        transform: translateY(0px);
+    }
+    20%
+    {
+        transform: translateY(-20px);
+    }
+    40%, 100%
+    {
+        transform: translateY(0px);
+    }
+
+}
+
+/* .about-section {
+    margin: 0;
+    padding: 0;
+} */
+
+.about-header {
+    color: var(--cream);
+}
+
+.about-text {
+    color: var(--cream);
+}
+
+.about-link {
+    color: var(--blue);
+}
+
+.about-link:hover {
+    color: var(--blue);
+}
+
+.about-img {
+    height: 250px;
+    max-width: 100%;
+}
+
+.tech-list-item {
+    color: var(--cream);
+}
+
+.projects-section1, .projects-section2 {
+    margin: 20px;
+}
+
+.projects-section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-h2 {
+    color: var(--cream);
+}
+
+.projectsA-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.projectA {
+    height: 450px;
+    margin: 40px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(225, 225, 225, 0.1);
+    overflow: hidden;
+    border-top: 1px solid rgba(225, 225, 225, 0.5);
+    border-left: 1px solid rgba(225, 225, 225, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.content {
+    margin-top: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.content:hover {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.projectA-number {
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    font-size: 8em;
+    color: rgba(225, 225, 225, 0.05);
+    pointer-events: none;
+}
+
+.projectA-name {
+    font-size: 30px;
+    color: var(--blue);
+    z-index: 1;
+}
+
+.projectA-desc {
+    font-size: 1em;
+    color: var(--blue);
+    font-weight: 300;
+}
+
+.projectA-link{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: var(--blue);
+    color: var(--red);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.projectA-link:hover {
+    color: #000;
+}
+
+.apiA-link {
+    color: var(--cream);
+}
+
+.apiA-link:hover {
+    color: var(--blue);
+}
+
+@media screen and (max-width: 992px) {
+    .projects-section1 {
+        display: none;
+    }
+}
+
+.projects-section2 {
+   display: flex; 
+   flex-direction: column;
+}
+
+.projectsB-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectB {
+    margin: 10px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(225, 225, 225, 0.1);
+    overflow: hidden;
+    border-top: 1px solid rgba(225, 225, 225, 0.5);
+    border-left: 1px solid rgba(225, 225, 225, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.project-nav-text {
+    font-size: 50px;
+    color: var(--blue);
+}
+
+.feat-project {
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    letter-spacing: 5px;
+    color: rgba(225, 225, 225, 0.25);
+}
+
+.projectB-name {
+    margin: 0;
+    padding: 0;
+    color: var(--blue);
+    font-size: 30px;
+}
+
+.projectB-text {
+    padding-top: 10px;
+    font-size: 1em;
+    color: var(--blue);
+}
+
+.components {
+    font-size: 12px;
+    color: var(--cream);
+    margin: 5px;
+    padding: 5px;
+    letter-spacing: 2px;
+}
+
+.projectB-link-div {
+    margin-bottom: 5px;
+}
+
+.projectB-link {
+    color: var(--blue);
+    font-size: 20px;
+}
+
+.projectB-link:hover {
+    color: var(--cream);
+}
+
+@media screen and (min-width: 992px) {
+    .projects-section2 {
+        display: none;
+    } 
+}
+
+.more-projects {
+    margin-top: 20px;
+    color: var(--cream);
+}
+
+.more-projects-link {
+    color: var(--blue);
+}
+
+.more-projects-link:hover {
+    color: var(--cream);
+}
+
+.contact {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-h2 {
+    color: var(--cream);
+}
+
+.form-text {
+    color: var(--blue);
+}
+
+.email-link {
+    color: var(--cream);
+}
+
+.email-link:hover {
+    color: var(--cream);
+    text-decoration: none;
+}
+
+.soc-nav-link {
+    margin: 10px;
+    padding: 10px;
+    color: var(--cream);
+    font-size: 30px;
+}
+
+.soc-nav-link:hover {
+    color: var(--blue);
+}
+
+footer {
+    color: var(--blue);
+}
